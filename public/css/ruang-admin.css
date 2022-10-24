@@ -1097,6 +1097,9 @@ a:focus {
   background-color: #559c59
 }
 
+.bg-custom {
+  background-color: #fafafa !important;}
+
 .sidebar-light hr.sidebar-divider {
   border-top: 1px solid #eaecf4
 }

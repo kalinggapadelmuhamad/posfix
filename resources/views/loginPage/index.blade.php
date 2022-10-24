@@ -7,7 +7,7 @@
             font-family: "Poppins";
         }
 
-        body{
+        body {
             background: #FAFAFA;
         }
 
@@ -22,7 +22,7 @@
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.07) !important;
         }
 
-        ::placeholder{
+        ::placeholder {
             font-weight: 300;
         }
 
@@ -46,38 +46,36 @@
     </style>
 @endsection
 @section('content')
-@include('layouts.partials.front._loginSection')
+    @include('layouts.partials.front._loginSection')
 @endsection
 @section('insert-js')
-<script>
+    <script>
+        //collect data by id
+        var password = document.getElementById("exampleFormControlInput2");
+        var toggler = document.getElementById("togglePassword");
 
-    //collect data by id
-    var password  = document.getElementById("exampleFormControlInput2");
-    var toggler   = document.getElementById("togglePassword");
+        //set event listener
+        toggler.addEventListener("click", hideShowPassword);
 
-    //set event listener
-    toggler.addEventListener("click", hideShowPassword);
+        //hideShowPassword main
+        function hideShowPassword() {
 
-    //hideShowPassword main
-    function hideShowPassword() {
+            console.log(password.type);
 
-        console.log(password.type);
-        
-        //chech password type
-        if (password.type === "password") {
+            //chech password type
+            if (password.type === "password") {
 
-            password.setAttribute("type", "text");
-            toggler.classList.remove("bi-eye-slash-fill");
-            toggler.classList.add("bi-eye-fill");
+                password.setAttribute("type", "text");
+                toggler.classList.remove("bi-eye-slash-fill");
+                toggler.classList.add("bi-eye-fill");
 
-        } else {
+            } else {
 
-            password.setAttribute("type", "password");
-            toggler.classList.remove("bi-eye-fill");
-            toggler.classList.add("bi-eye-slash-fill");
-            
+                password.setAttribute("type", "password");
+                toggler.classList.remove("bi-eye-fill");
+                toggler.classList.add("bi-eye-slash-fill");
+
+            }
         }
-    }
-
-</script>
+    </script>
 @endsection
